@@ -1,0 +1,14 @@
+---
+- hosts: linuxnodes
+  tasks:
+      - name: pavan user
+        user:
+             name: "{{ item }}"
+             state: present
+             update_password: on_create
+             password: "pavan122"
+        become: true
+        with_items:
+             - pavan
+             - srini
+             - dilip
